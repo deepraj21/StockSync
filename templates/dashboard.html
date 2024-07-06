@@ -1,42 +1,1017 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>StockSync</title>
+    <link rel="stylesheet" href="../static/css/style-dashboard.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-<body>
-    <h1>Welcome, {{ username }}</h1>
 
-    <div>
-        <input type="text" id="ticker" placeholder="Enter Ticker" value="{{ default_ticker }}">
-        <button onclick="searchTicker()">Search</button>
+<body id="yDmH0d" 
+    class="tQj5Y ghyPEc IqBfM ecJEib EWZcud" data-iw="1920" data-ih="945" data-remove-ogb-header="false">
+   
+    
+    <div class="pGxpHc">
+        <header class="gb_ga gb_8a gb_Kd gb_jd gb_ed" ng-non-bindable="" id="gb" role="banner"
+            style="background-color:rgba(255,255,255,1)">
+            <div class="gb_yd"></div>
+            <div class="gb_id gb_bd gb_pd">
+                <div class="gb_hd gb_7c gb_8c">
+                    
+                    <div class="gb_xc">
+                        <div class="gb_yc"><a class="gb_Ud gb_zc" aria-label="Finance" href="./" title="Finance"><span
+                                    class="gb_fd gb_6c">StockSync</span></a></div>
+                    </div>
+                    <div class="gb_hd gb_m gb_5c gb_6c"><span class="gb_9c" aria-level="1" role="heading"></span></div>
+                </div>
+                <div class="gb_hd gb_sd gb_Ie gb_Fe gb_Ke">
+                    <div class="gb_re gb_Sa">
+                        <button class="gb_xe" aria-label="Close search"
+                                type="button"><svg focusable="false" height="24px" viewbox="0 0 24 24" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                                </svg></button>
+                            <div class="gb_Ce">
+                                <div class="gb_je gb_De"><span jscontroller="UhTg0e" jsaction="n6HNx:lBVxCb">
+                                        <div class="TMT2L" jscontroller="U4Hp0d"
+                                            jsaction="rcuQ6b:rcuQ6b;fRPOBb:ti6hGc;isz31c:ZYIfFd;">
+                                            <div class="Mxgq5c" jsname="haAclf" jscontroller="Nz8Ibb"
+                                                jsaction="CLIdJb:O1htCb;v819Lb:pX1iqf;u7cUSb:uuoJzf;ayitRe:StRDxb;fRPOBb:iZOn0b;isz31c:obXmGb;rcuQ6b:npT2md;JIbuQc:KdOnwf;hPJKmc:UG2Mce;"
+                                                jslog="126503;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQp9wHegQIABAA;track:click">
+                                                <div class="L6J0Pc VOEIyf g4E9Cb undefined" jscontroller="Mq9n0c"
+                                                    jsaction="keydown:I481le; focus: AHmuwe;AHmuwe:AHmuwe; mouseenter:npT2md;Mu8aMc:YPqjbf;Edq9ub:SDqDXe;e0gSlf:pX1iqf;"
+                                                    data-close-on-blur="true" jsname="h0T7hb" data-renderer="wtb94e">
+                                                    <div class="d1dlne" jscontroller="K99qY" jsname="YPqjbf"
+                                                        style="position: relative"
+                                                        data-placeholder="Search for stocks, ETFs &amp; more"
+                                                        data-activedescendants="true"><input
+                                                            class="yNVtPc ZAGvjd Ny5lGc" disabled="true"
+                                                            aria-hidden="true" jsname="A51lKb"
+                                                            value="Search for stocks, ETFs &amp; more"
+                                                            dir="ltr" /><input class="Ax4B8 ZAGvjd" type="text"
+                                                            autocomplete="off"
+                                                            aria-label="Search for stocks, ETFs &amp; more"
+                                                            aria-autocomplete="list" aria-haspopup="true"
+                                                            aria-expanded="false" role="combobox" jsname="dSO9oc"
+                                                            jsaction="input:YPqjbf; keydown:I481le; click:cOuCgd" />
+                                                    </div>
+                                                    <div class=" tWfTvb">
+                                                        <div class="u3WVdc jBmls" tabindex="-1" role="listbox"
+                                                            data-expanded="false" data-childcount="0" jsname="iuXDpb"
+                                                            jsaction="mousedown:npT2md(preventDefault=true);"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </span></div>
+                            </div><button class="gb_ye" aria-label="Clear search" type="button"><svg focusable="false"
+                                    height="24px" viewbox="0 0 24 24" width="24px" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                    </path>
+                                    <path d="M0 0h24v24H0z" fill="none"></path>
+                                </svg></button><button class="gb_ve" aria-label="Search" role="button"><svg
+                                    focusable="false" height="24px" viewbox="0 0 24 24" width="24px"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M20.49,19l-5.73-5.73C15.53,12.2,16,10.91,16,9.5C16,5.91,13.09,3,9.5,3S3,5.91,3,9.5C3,13.09,5.91,16,9.5,16 c1.41,0,2.7-0.47,3.77-1.24L19,20.49L20.49,19z M5,9.5C5,7.01,7.01,5,9.5,5S14,7.01,14,9.5S11.99,14,9.5,14S5,11.99,5,9.5z">
+                                    </path>
+                                    <path d="M0,0h24v24H0V0z" fill="none"></path>
+                                </svg></button>
+                        
+                    </div>
+                </div>
+                <div class="gb_td gb_6a gb_hd" ng-non-bindable="" data-ogsr-up="">
+                    <div class="gb_Ld">
+                        <div class="gb_Xc">
+                            <div class="gb_k gb_Fd gb_z">
+                                <a href="{{url_for('logout')}}"><p>Logout</p><a>
+                            </div>
+                        </div>
+                        <div class="gb_b gb_Fd gb_Pf gb_z">
+                            <div class="gb_f gb_5a gb_Pf gb_z">
+                                <p>{{username}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gb_qd gb_bd"></div>
+        </header>
+        <div class="gb_Nc gb_Lc" ng-non-bindable="">
+            <div class="gb_Wc">
+                <div class="gb_xc">
+                    <div class="gb_yc"><a class="gb_Ud gb_zc" aria-label="Finance" href="./" title="Finance"><span
+                                class="gb_Dc gb_Rd" aria-hidden="true" role="presentation"></span><span
+                                class="gb_fd gb_6c">Finance</span></a></div>
+                </div>
+            </div>
+            <div class="gb_Sc"></div>
+        </div>
+        <div class="gb_ld"></div>
     </div>
+  <c-wiz jsrenderer="jY5r6b" class="p29Ibb" jsshadow jsdata="deferred-i1" data-node-index="0;0" autoupdate
+        jsmodel="hc6Ubd" c-wiz>
+        <div jscontroller="GcWJze" jsaction="rcuQ6b:npT2md; click:cOuCgd;IQAhV:BCtnMc;RI2Xre:Vtdxob;IpaWXd:bEmJw;"
+            class="" jsname="IjRiGf"><gm-raised-drawer jsshadow jscontroller="IERrm" jsaction=""
+                class="SFOjKe-MV7yeb-QA0Szd" jsname="QA0Szd" wiz-aria-label="navigational drawer" wiz-aria-modal="false"
+                pivot="end">
+                <div aria-expanded="false" aria-hidden="true" aria-label="navigational drawer" aria-modal="false"
+                    class="UMrnmb-yXBf7b-QA0Szd-h2P4hd  UMrnmb-yXBf7b-QA0Szd-MV7yeb-OWXEXe-xTMeO" role="dialog">
+                    <div class="UMrnmb-yXBf7b-QA0Szd-HhR6Cd-bF1uUb"></div>
+                    <div class="UMrnmb-yXBf7b-QA0Szd-QFG6Bd-bN97Pc " jsname="vkkW1" jsslot ssk='1#1'>
+                        <div class="c0Y0Ge"><a href="./" class="ForAd"><img
+                                    src="//ssl.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg"
+                                    alt="" width="74" height="24" />
+                                <div class="N27tdc">Finance</div>
+                            </a></div>
+                        <div class="s9af4d" jscontroller="T6dVX"
+                            jsaction="rcuQ6b:WYd;JIbuQc:Iz4AZb(aAOPF),NeHmSd(FVMyae)" data-is-loaded="true">
+                            <div class="HMVX2b"><a class="lv9JE AJlFKc" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAB;track:click"
+                                    href="./" title="Home"><i class="google-material-icons nKvtDe"
+                                        aria-hidden="true">finance_mode</i>
+                                    <div class="jjm4k">Home</div>
+                                </a>
+                                <div jslog="138894;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQjr0IegQIARAC;track:click"><a
+                                        class="lv9JE" role="menuitem"
+                                        jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAD;track:click"
+                                        href="./markets/indexes" title="Market trends"><i
+                                            class="google-material-icons nKvtDe" aria-hidden="true">manage_search</i>
+                                        <div class="jjm4k">Market trends</div>
+                                    </a></div>
+                                <div class="jI38jc"></div>
+                                <div class="IvVY6">
+                                    <div role="heading" aria-level="2" class="Wa7qeb">Portfolios</div><span
+                                        data-is-tooltip-wrapper="true"><button
+                                            class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc GIjev" jscontroller="soHxf"
+                                            jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                            jsname="FVMyae" data-disable-idom="true" aria-label="Create portfolio"
+                                            data-tooltip-enabled="true" data-tooltip-id="tt-i2"
+                                            data-tooltip-classes="zfeEze"
+                                            jslog="105721;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQ-bkGegQIARAE;track:click">
+                                            <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div>
+                                            <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div><i
+                                                class="google-material-icons VfPpkd-kBDsod" aria-hidden="true">add</i>
+                                        </button>
+                                        <div class="EY8ABd-OWXEXe-TAWMXe" id="tt-i2" role="tooltip" aria-hidden="true">
+                                            Create portfolio</div>
+                                    </span>
+                                </div>
+                                <div class="IvVY6">
+                                    <div role="heading" aria-level="2" class="Wa7qeb">Watchlists</div><span
+                                        data-is-tooltip-wrapper="true"><button
+                                            class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc GIjev" jscontroller="soHxf"
+                                            jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                            jsname="aAOPF" data-disable-idom="true" aria-label="Create watchlist"
+                                            data-tooltip-enabled="true" data-tooltip-id="tt-i3"
+                                            data-tooltip-classes="zfeEze"
+                                            jslog="105721;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQ-bkGegQIARAG;track:click">
+                                            <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div>
+                                            <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div><i
+                                                class="google-material-icons VfPpkd-kBDsod" aria-hidden="true">add</i>
+                                        </button>
+                                        <div class="EY8ABd-OWXEXe-TAWMXe" id="tt-i3" role="tooltip" aria-hidden="true">
+                                            Create watchlist</div>
+                                    </span>
+                                </div><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAI;track:click"
+                                    href="./portfolio/watchlist" title="Watchlist"><i
+                                        class="google-material-icons nKvtDe" aria-hidden="true">list</i>
+                                    <div class="jjm4k">Watchlist</div>
+                                </a>
+                                <div class="jI38jc"></div>
+                                <div class="IvVY6">
+                                    <div role="heading" aria-level="2" class="Wa7qeb">Most Active</div>
+                                </div><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAL;track:click"
+                                    href="./quote/YESBANK:NSE" title="Yes Bank Ltd" jscontroller="Hrxnte"
+                                    jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                    <div class="B2OOsf"><span class="hEj6ke tPLoW">
+                                            <div jsname="VORjKe" class="tGqfud">
+                                                <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                        aria-hidden="true"><svg width="16" height="16"
+                                                            viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                                            <path
+                                                                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                        </svg></span></div>
+                                            </div>
+                                        </span>
+                                        <div class="LbSHKc">Yes Bank Ltd</div>
+                                        <div class="XOK1Oe"><span jsname="Fe7oBc" class="NydbP " jsaction=""
+                                                data-disable-percent-toggle="true" data-multiplier-for-price-change="1"
+                                                aria-label="Up by 11.36%">
+                                                <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy">
+                                                    <div class="JwB6zf V7hZne" style="font-size: 14px;">+11.36%</div>
+                                                </div>
+                                            </span></div>
+                                    </div>
+                                </a><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAN;track:click"
+                                    href="./quote/IDEA:NSE" title="Vodafone Idea Ltd" jscontroller="Hrxnte"
+                                    jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                    <div class="B2OOsf"><span class="hEj6ke tPLoW">
+                                            <div jsname="VORjKe" class="tGqfud">
+                                                <div class="n1rUf tmWKn"><span class="ZoIEk tmWKn"
+                                                        aria-hidden="true"><svg width="16" height="16"
+                                                            viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                                            <path
+                                                                d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                        </svg></span></div>
+                                            </div>
+                                        </span>
+                                        <div class="LbSHKc">Vodafone Idea Ltd</div>
+                                        <div class="XOK1Oe"><span jsname="Fe7oBc" class="NydbP " jsaction=""
+                                                data-disable-percent-toggle="true" data-multiplier-for-price-change="1"
+                                                aria-label="Down by 1.89%">
+                                                <div jsname="m6NnIb" class="zWwE1 Ebnabc P2Luy">
+                                                    <div class="JwB6zf V7hZne" style="font-size: 14px;">-1.89%</div>
+                                                </div>
+                                            </span></div>
+                                    </div>
+                                </a><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAP;track:click"
+                                    href="./quote/IRFC:NSE" title="Indian Railway Finance Corp Ltd"
+                                    jscontroller="Hrxnte" jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                    <div class="B2OOsf"><span class="hEj6ke tPLoW">
+                                            <div jsname="VORjKe" class="tGqfud">
+                                                <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                        aria-hidden="true"><svg width="16" height="16"
+                                                            viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                                            <path
+                                                                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                        </svg></span></div>
+                                            </div>
+                                        </span>
+                                        <div class="LbSHKc">Indian Railway Finance Corp Ltd</div>
+                                        <div class="XOK1Oe"><span jsname="Fe7oBc" class="NydbP " jsaction=""
+                                                data-disable-percent-toggle="true" data-multiplier-for-price-change="1"
+                                                aria-label="Up by 5.73%">
+                                                <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy">
+                                                    <div class="JwB6zf V7hZne" style="font-size: 14px;">+5.73%</div>
+                                                </div>
+                                            </span></div>
+                                    </div>
+                                </a><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAR;track:click"
+                                    href="./quote/RVNL:NSE" title="Rail Vikas Nigam Ltd" jscontroller="Hrxnte"
+                                    jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                    <div class="B2OOsf"><span class="hEj6ke tPLoW">
+                                            <div jsname="VORjKe" class="tGqfud">
+                                                <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                        aria-hidden="true"><svg width="16" height="16"
+                                                            viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                                            <path
+                                                                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                        </svg></span></div>
+                                            </div>
+                                        </span>
+                                        <div class="LbSHKc">Rail Vikas Nigam Ltd</div>
+                                        <div class="XOK1Oe"><span jsname="Fe7oBc" class="NydbP " jsaction=""
+                                                data-disable-percent-toggle="true" data-multiplier-for-price-change="1"
+                                                aria-label="Up by 17.53%">
+                                                <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy">
+                                                    <div class="JwB6zf V7hZne" style="font-size: 14px;">+17.53%</div>
+                                                </div>
+                                            </span></div>
+                                    </div>
+                                </a><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAT;track:click"
+                                    href="./quote/IRCON:NSE" title="Ircon International Ltd" jscontroller="Hrxnte"
+                                    jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                    <div class="B2OOsf"><span class="hEj6ke tPLoW">
+                                            <div jsname="VORjKe" class="tGqfud">
+                                                <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                        aria-hidden="true"><svg width="16" height="16"
+                                                            viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                                            <path
+                                                                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                        </svg></span></div>
+                                            </div>
+                                        </span>
+                                        <div class="LbSHKc">Ircon International Ltd</div>
+                                        <div class="XOK1Oe"><span jsname="Fe7oBc" class="NydbP " jsaction=""
+                                                data-disable-percent-toggle="true" data-multiplier-for-price-change="1"
+                                                aria-label="Up by 10.17%">
+                                                <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy">
+                                                    <div class="JwB6zf V7hZne" style="font-size: 14px;">+10.17%</div>
+                                                </div>
+                                            </span></div>
+                                    </div>
+                                </a><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAV;track:click"
+                                    href="./quote/SUZLON:NSE" title="Suzlon Energy Ltd" jscontroller="Hrxnte"
+                                    jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                    <div class="B2OOsf"><span class="hEj6ke tPLoW">
+                                            <div jsname="VORjKe" class="tGqfud">
+                                                <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                        aria-hidden="true"><svg width="16" height="16"
+                                                            viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                                            <path
+                                                                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                        </svg></span></div>
+                                            </div>
+                                        </span>
+                                        <div class="LbSHKc">Suzlon Energy Ltd</div>
+                                        <div class="XOK1Oe"><span jsname="Fe7oBc" class="NydbP " jsaction=""
+                                                data-disable-percent-toggle="true" data-multiplier-for-price-change="1"
+                                                aria-label="Up by 3.05%">
+                                                <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy">
+                                                    <div class="JwB6zf V7hZne" style="font-size: 14px;">+3.05%</div>
+                                                </div>
+                                            </span></div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div>
+                                <div class="jI38jc"></div><a class="lv9JE" role="menuitem"
+                                    jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAW;track:click"
+                                    href="./settings" title="Settings"><i class="google-material-icons nKvtDe"
+                                        aria-hidden="true">settings</i>
+                                    <div class="jjm4k">Settings</div>
+                                </a><span jscontroller="Y58Nvc" jsaction="JIbuQc:wfNWRd;wfNWRd" class="undefined"
+                                    role="button" tabindex="0"><a class="lv9JE" role="menuitem"
+                                        jslog="121605;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhbYHegQIARAX;track:click"
+                                        title="Send feedback"><i class="google-material-icons nKvtDe"
+                                            aria-hidden="true">feedback</i>
+                                        <div class="jjm4k">Send feedback</div>
+                                    </a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </gm-raised-drawer></div><c-data id="i1" jsdata=" TaNuub;_;4 b9K6if;_;7"></c-data>
+    </c-wiz>
+    
+    <c-wiz jsrenderer="NDJNP" class="zQTmif SSPGKf ccEnac" jsdata="deferred-i4" data-p="%.@.]" jscontroller="D4tUXb"
+        jsaction="rcuQ6b:WYd" jsname="a9kxte" data-node-index="0;0" jsmodel="hc6Ubd" view c-wiz data-ogpc>
+        <div class="T4LgNb" jsname="a9kxte">
+            <div class="VjFXz"></div>
+            <div jscontroller="DAGh5b" jsaction="IBB03b:wKZqRb"></div>
+            <div class="KdK6Xc">
+                <div class="htyage"></div>
+                <div class="ml2Uge"></div>
+                <div class="e1AOyf"><c-wiz jsrenderer="rLWH0" jsshadow jsdata="deferred-i5" data-p="%.@.true]"
+                        data-node-index="4;0" jsmodel="hc6Ubd" c-wiz>
+                        <div jscontroller="LMhoGc" jsaction="fwW7Dd:W5jDOe;" role="complementary"
+                            aria-labelledby="market-rundown-heading">
+                            <div class="xYZf1c"></div>
+                            
+                            <div class="MSaaqf">
+                                <div class="SJyhnc" jsshadow>
+                                    <div jsslot class="NBZP0e xbmkib" jscontroller="XTf4dd" jsaction="rcuQ6b:iEVEeb;"
+                                        data-snap-point="0" data-snap-debounce-ms="250" data-snap-animation-ms="300">
+                                        <div class="lkR3Y" ssk='9:/m/04t5sp'><a href="./quote/NIFTY_50:INDEXNSE"
+                                                jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAK;track:click"
+                                                jscontroller="jyWiyc" jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                                <div class="vReuC GEykwb"><span class="hEj6ke">
+                                                        <div jsname="VORjKe" class="tGqfud">
+                                                            <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                                    aria-hidden="true"><svg width="16" height="16"
+                                                                        viewBox="0 0 24 24" focusable="false"
+                                                                        class=" NMm5M">
+                                                                        <path
+                                                                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                                    </svg></span></div>
+                                                        </div>
+                                                    </span>
+                                                    <div class="VKMjFc">
+                                                        <div class="pKBk1e">OPEN</div>
+                                                        <div class="wzUQBf"><span class="lh92">
+                                                                <div jsname="ip75Cb" class="s1OkXb">
+                                                                    <div class="YMlKec" id="open">{{ current_price.open }}</div>
+                                                                </div>
+                                                            </span></div>
+                                                    </div>
+                                                    <div class="T7Akdb"><span jsname="p08n3b" class="NydbP  a3qxNc"
+                                                            jsaction="" data-disable-percent-toggle="true"
+                                                            data-multiplier-for-price-change="1"
+                                                            aria-label="Up by 0.089%">
+                                                            <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy t5mBV">
+                                                                <div class="JwB6zf V7hZne" style="font-size: 12px;">
+                                                                    +0.089%</div>
+                                                            </div>
+                                                        </span>
+                                                        <div class="SEGxAb" style="height: 16px;">
+                                                            <div class="BAftM" jsname="vY9t3b" data-animation-size="16"
+                                                                style="transform: translateY(calc(-100% + 16px));"><span
+                                                                    class="P2Luy Ez2Ioe">+21.70</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               
+                                            </a></div>
+                                        <div class="lkR3Y" ssk='9:/m/046k_p'><a href="./quote/SENSEX:INDEXBOM"
+                                                jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAL;track:click"
+                                                jscontroller="jyWiyc" jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                                <div class="vReuC D4uc1d"><span class="hEj6ke">
+                                                        <div jsname="VORjKe" class="tGqfud">
+                                                            <div class="n1rUf tmWKn"><span class="ZoIEk tmWKn"
+                                                                    aria-hidden="true"><svg width="16" height="16"
+                                                                        viewBox="0 0 24 24" focusable="false"
+                                                                        class=" NMm5M">
+                                                                        <path
+                                                                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                    </svg></span></div>
+                                                        </div>
+                                                    </span>
+                                                    <div class="VKMjFc">
+                                                        <div class="pKBk1e">CLOSE</div>
+                                                        <div class="wzUQBf"><span class="lh92">
+                                                                <div jsname="ip75Cb" class="s1OkXb">
+                                                                    <div class="YMlKec" id="close">{{ current_price.close }}</div>
+                                                                </div>
+                                                            </span></div>
+                                                    </div>
+                                                    <div class="T7Akdb"><span jsname="p08n3b" class="NydbP  a3qxNc"
+                                                            jsaction="" data-disable-percent-toggle="true"
+                                                            data-multiplier-for-price-change="1"
+                                                            aria-label="Down by 0.066%">
+                                                            <div jsname="m6NnIb" class="zWwE1 Ebnabc P2Luy t5mBV">
+                                                                <div class="JwB6zf V7hZne" style="font-size: 12px;">
+                                                                    -0.066%</div>
+                                                            </div>
+                                                        </span>
+                                                        <div class="SEGxAb" style="height: 16px;">
+                                                            <div class="BAftM" jsname="vY9t3b" data-animation-size="16"
+                                                                style="transform: translateY(calc(-100% + 16px));"><span
+                                                                    class="P2Luy Ebnabc">-53.07</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </a></div>
+                                        <div class="lkR3Y" ssk='13:/g/11dfwz6k78'><a href="./quote/NIFTY_BANK:INDEXNSE"
+                                                jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAM;track:click"
+                                                jscontroller="jyWiyc" jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                                <div class="vReuC D4uc1d"><span class="hEj6ke">
+                                                        <div jsname="VORjKe" class="tGqfud">
+                                                            <div class="n1rUf tmWKn"><span class="ZoIEk tmWKn"
+                                                                    aria-hidden="true"><svg width="16" height="16"
+                                                                        viewBox="0 0 24 24" focusable="false"
+                                                                        class=" NMm5M">
+                                                                        <path
+                                                                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                    </svg></span></div>
+                                                        </div>
+                                                    </span>
+                                                    <div class="VKMjFc">
+                                                        <div class="pKBk1e">HIGH</div>
+                                                        <div class="wzUQBf"><span class="lh92">
+                                                                <div jsname="ip75Cb" class="s1OkXb">
+                                                                    <div class="YMlKec" id="high">{{ current_price.high }}</div>
+                                                                </div>
+                                                            </span></div>
+                                                    </div>
+                                                    <div class="T7Akdb"><span jsname="p08n3b" class="NydbP  a3qxNc"
+                                                            jsaction="" data-disable-percent-toggle="true"
+                                                            data-multiplier-for-price-change="1"
+                                                            aria-label="Down by 0.83%">
+                                                            <div jsname="m6NnIb" class="zWwE1 Ebnabc P2Luy t5mBV">
+                                                                <div class="JwB6zf V7hZne" style="font-size: 12px;">
+                                                                    -0.83%</div>
+                                                            </div>
+                                                        </span>
+                                                        <div class="SEGxAb" style="height: 16px;">
+                                                            <div class="BAftM" jsname="vY9t3b" data-animation-size="16"
+                                                                style="transform: translateY(calc(-100% + 16px));"><span
+                                                                    class="P2Luy Ebnabc">-443.35</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </a></div>
+                                        <div class="lkR3Y" ssk='13:/g/11g9g46d5t'><a href="./quote/NIFTY_IT:INDEXNSE"
+                                                jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAN;track:click"
+                                                jscontroller="jyWiyc" jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                                <div class="vReuC D4uc1d"><span class="hEj6ke">
+                                                        <div jsname="VORjKe" class="tGqfud">
+                                                            <div class="n1rUf tmWKn"><span class="ZoIEk tmWKn"
+                                                                    aria-hidden="true"><svg width="16" height="16"
+                                                                        viewBox="0 0 24 24" focusable="false"
+                                                                        class=" NMm5M">
+                                                                        <path
+                                                                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                    </svg></span></div>
+                                                        </div>
+                                                    </span>
+                                                    <div class="VKMjFc">
+                                                        <div class="pKBk1e">LOW</div>
+                                                        <div class="wzUQBf"><span class="lh92">
+                                                                <div jsname="ip75Cb" class="s1OkXb">
+                                                                    <div class="YMlKec" id="low">{{ current_price.low }}</div>
+                                                                </div>
+                                                            </span></div>
+                                                    </div>
+                                                    <div class="T7Akdb"><span jsname="p08n3b" class="NydbP  a3qxNc"
+                                                            jsaction="" data-disable-percent-toggle="true"
+                                                            data-multiplier-for-price-change="1"
+                                                            aria-label="Down by 0.014%">
+                                                            <div jsname="m6NnIb" class="zWwE1 Ebnabc P2Luy t5mBV">
+                                                                <div class="JwB6zf V7hZne" style="font-size: 12px;">
+                                                                    -0.014%</div>
+                                                            </div>
+                                                        </span>
+                                                        <div class="SEGxAb" style="height: 16px;">
+                                                            <div class="BAftM" jsname="vY9t3b" data-animation-size="16"
+                                                                style="transform: translateY(calc(-100% + 16px));"><span
+                                                                    class="P2Luy Ebnabc">-5.15</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                            </a></div>
+                                        <div class="lkR3Y" ssk='12:/g/1q52g57fh'><a href="./quote/BSE-SMLCAP:INDEXBOM"
+                                                jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAO;track:click"
+                                                jscontroller="jyWiyc" jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                                <div class="vReuC GEykwb"><span class="hEj6ke">
+                                                        <div jsname="VORjKe" class="tGqfud">
+                                                            <div class="n1rUf uoQxH"><span class="ZoIEk uoQxH"
+                                                                    aria-hidden="true"><svg width="16" height="16"
+                                                                        viewBox="0 0 24 24" focusable="false"
+                                                                        class=" NMm5M">
+                                                                        <path
+                                                                            d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                                    </svg></span></div>
+                                                        </div>
+                                                    </span>
+                                                    <div class="VKMjFc">
+                                                        <div class="pKBk1e">PREDICTED</div>
+                                                        <div class="wzUQBf"><span class="lh92">
+                                                                <div jsname="ip75Cb" class="s1OkXb">
+                                                                    <div class="YMlKec" id="predicted">{{ predicted_price }}</div>
+                                                                </div>
+                                                            </span></div>
+                                                    </div>
+                                                    <div class="T7Akdb"><span jsname="p08n3b" class="NydbP  a3qxNc"
+                                                            jsaction="" data-disable-percent-toggle="true"
+                                                            data-multiplier-for-price-change="1"
+                                                            aria-label="Up by 0.70%">
+                                                            <div jsname="m6NnIb" class="zWwE1 Ez2Ioe P2Luy t5mBV">
+                                                                <div class="JwB6zf V7hZne" style="font-size: 12px;">
+                                                                    +0.70%</div>
+                                                            </div>
+                                                        </span>
+                                                        <div class="SEGxAb" style="height: 16px;">
+                                                            <div class="BAftM" jsname="vY9t3b" data-animation-size="16"
+                                                                style="transform: translateY(calc(-100% + 16px));"><span
+                                                                    class="P2Luy Ez2Ioe">+378.83</span></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="sR5uIb GEykwb">
+                                                    <div class="VKMjFc">
+                                                        <div class="pKBk1e">S&amp;P BSE SmallCap</div>
+                                                        <div class="wzUQBf"><span class="lh92">
+                                                                <div jsname="ip75Cb" class="s1OkXb">
+                                                                    <div class="YMlKec">54,153.96</div>
+                                                                </div>
+                                                            </span></div><span jsname="Fe7oBc" class="NydbP nZQ6l"
+                                                            jsaction="click:Xcukee(preventDefault=true)"
+                                                            data-disable-percent-toggle="false"
+                                                            data-multiplier-for-price-change="1"
+                                                            aria-label="Up by 0.70%">
+                                                            <div jsname="m6NnIb" class="zWwE1">
+                                                                <div class="JwB6zf" style="font-size: 14px;"><span
+                                                                        class="V53LMb" aria-hidden="true"><svg
+                                                                            width="14" height="14" viewBox="0 0 24 24"
+                                                                            focusable="false" class=" NMm5M">
+                                                                            <path
+                                                                                d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+                                                                        </svg></span>0.70%</div>
+                                                            </div>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><c-data id="i5" jsdata=" PwZkN;_;1 FUlRub;_;3"></c-data>
+                    </c-wiz>
+                    <div class="AyKEed" jscontroller="UhTg0e" jsaction="n6HNx:lBVxCb">
+                        <div jscontroller="XijuNc"
+                            jsaction="CLIdJb:O1htCb;v819Lb:pX1iqf;u7cUSb:uuoJzf;ayitRe:StRDxb;fRPOBb:iZOn0b;isz31c:obXmGb;rcuQ6b:npT2md;JIbuQc:KdOnwf;hPJKmc:UG2Mce;"
+                            jslog="126503;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQp9wHegQIAhAP;track:click"
+                            data-is-full-screen="false" data-is-fixed="false" data-left-icon="true"
+                            data-placeholder="Search for stocks, ETFs &amp; more" data-show-custom-asset-options="false"
+                            class="M52nVb ytPNkd"><span class="eEMh0d" aria-hidden="true"><svg width="24" height="24"
+                                    viewBox="0 0 24 24" focusable="false" class=" NMm5M">
+                                    <path
+                                        d="M20.49 19l-5.73-5.73C15.53 12.2 16 10.91 16 9.5A6.5 6.5 0 1 0 9.5 16c1.41 0 2.7-.47 3.77-1.24L19 20.49 20.49 19zM5 9.5C5 7.01 7.01 5 9.5 5S14 7.01 14 9.5 11.99 14 9.5 14 5 11.99 5 9.5z" />
+                                </svg></span>
+                            <div class="L6J0Pc ZB3Ebc nz7KN" jscontroller="Mq9n0c"
+                                jsaction="keydown:I481le; focus: AHmuwe;AHmuwe:AHmuwe; mouseenter:npT2md;Mu8aMc:YPqjbf;Edq9ub:SDqDXe;e0gSlf:pX1iqf;"
+                                data-close-on-blur="true" jsname="h0T7hb" data-renderer="fZUdHf">
+                                <div class="d1dlne" jscontroller="K99qY" jsname="YPqjbf" style="position: relative"
+                                    data-placeholder="Search for stocks, ETFs &amp; more" data-activedescendants="true">
+                                    <input class="yNVtPc ZAGvjd Ny5lGc" type="text" id="ticker" placeholder="Enter Ticker" value="{{ default_ticker }}" onkeydown="handleKeyPress(event)"
+                                         />
+                                </div>
+                                <div class=" tWfTvb">
+                                    <div class="u3WVdc jBmls" tabindex="-1" role="listbox" data-expanded="false"
+                                        data-childcount="0" jsname="iuXDpb"
+                                        jsaction="mousedown:npT2md(preventDefault=true);"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="e1AOyf">
+                <div class="MXYcyf" role="main" jscontroller="sdZeFe" jsaction="GvneHb:og1FDd">
+                    <div class="ylTiXc">
+                        <div class="fAThCb"><c-wiz jsrenderer="jIjOOe" jsshadow jsdata="deferred-i6" data-p="%.@.]"
+                                data-node-index="8;0" autoupdate jsmodel="hc6Ubd" c-wiz>
+                                <div class="H8Ch1">
+                                    <section aria-labelledby="smart-watchlist-title">
+                                        <div role="heading" aria-level="2" class="NrF3hd" id="smart-watchlist-title">CandleStick Chart for {{ default_ticker }}<div><span class="D0hyNe"><i
+                                                        class="google-material-icons Cbe1Jf" aria-hidden="true">info</i>
+                                                    <div class="ChROwb Yzz0ef">this candle stick chart of {{ default_ticker }} is based on past 2years of data fetched from yfinace API.</div>
+                                                </span></div>
+                                        </div>
+                                       <div id="chart"></div>
+                                    </section>
+                                    <c-wiz jsrenderer="sAvMQ" jsshadow jsdata="deferred-i7"
+                                        data-p="%.@.null,null,true]" data-node-index="1;0" autoupdate jsmodel="hc6Ubd"
+                                        c-wiz>
+                                        <div jscontroller="mhJ1fb"
+                                            jsaction="rcuQ6b:WYd;JIbuQc:wJ8T3b(qow0df),Nf1yCc(LbUSSb);">
+                                            <div role="region" aria-label="Your lists">
+                                                
+                                                <div class="iETJGf wN4gAc">
+                                                    <div class="C0xD1 GxXsy" jscontroller="QOYo1b"
+                                                        jsaction="rcuQ6b:hhR9je;agoMJf:m3mY0d;JIbuQc:ux1Cpc(ux1Cpc),KpyLEe(KpyLEe);"
+                                                        jsshadow>
+                                                        <div class="SJyhnc bVf6m">
+                                                            <div jsslot class="NBZP0e xbmkib" jsname="RAZSvb"
+                                                                jscontroller="XTf4dd" jsaction="rcuQ6b:iEVEeb;"
+                                                                data-snap-point="0" data-snap-debounce-ms="250"
+                                                                data-snap-animation-ms="300" role="list">
+                                                                
+                                                                <div
+                                                                    class="VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  klsDGf trhMCd">
+                                                                    <div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb"
+                                                                        data-is-touch-wrapper='true'><button onclick="addToWishlist()"
+                                                                            class="VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-Bz112c-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf ksBjEc lKxP2d LQeN7 xyhRdf"
+                                                                        >
+                                                                            <div class="VfPpkd-Jh9lGc"></div>
+                                                                            <div class="VfPpkd-J1Ukfc-LhBDec"></div>
+                                                                            <div class="VfPpkd-RLmnJb"></div><i
+                                                                                class="google-material-icons VfPpkd-kBDsod"
+                                                                                aria-hidden="true">add</i><span
+                                                                                jsname="V67aGc"
+                                                                                class="VfPpkd-vQzf8d">ADD STOCK TICKER TO YOUR LIST</span>
+                                                                        </button></div><span
+                                                                        class="VfPpkd-BFbNVe-bF1uUb NZp2ef"
+                                                                        aria-hidden="true"></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="xytdBc KD3nld qRvogc" jsname="rf24F" soy-skip
+                                                            ssk='6:mCt6yc'>
+                                                            <div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb"
+                                                                data-is-touch-wrapper='true'><button
+                                                                    class="VfPpkd-BIzmGd SaBhMc NNFoTc zI3eKe N7pe4e Hkd4je E9mvxc VfPpkd-BIzmGd-OWXEXe-yolsp VfPpkd-BIzmGd-OWXEXe-dgl2Hf"
+                                                                    jsname="ux1Cpc" jscontroller="soHxf"
+                                                                    jsaction="click:cOuCgd(preventDefault=true); mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;"
+                                                                    data-idom-class="SaBhMc NNFoTc zI3eKe N7pe4e Hkd4je E9mvxc"
+                                                                    aria-label="Previous"><span
+                                                                        class="VfPpkd-BFbNVe-bF1uUb NZp2ef"
+                                                                        aria-hidden="true"></span>
+                                                                    <div class="VfPpkd-wbSZ0b"></div>
+                                                                    <div class="VfPpkd-kLizxb-LhBDec"></div><span
+                                                                        class="VfPpkd-Q0XOV"><span class=""
+                                                                            aria-hidden="true"><svg width="24"
+                                                                                height="24" viewBox="0 0 24 24"
+                                                                                focusable="false"
+                                                                                class="maOwXd NMm5M hhikbc">
+                                                                                <path
+                                                                                    d="M16.41 5.41L15 4l-8 8 8 8 1.41-1.41L9.83 12" />
+                                                                            </svg></span></span>
+                                                                    <div class="VfPpkd-D4TID"></div>
+                                                                </button></div>
+                                                        </div>
+                                                        <div class="xytdBc r82N7 qRvogc" jsname="v6lL4e" soy-skip
+                                                            ssk='6:wxAV4b'>
+                                                            <div class="VfPpkd-dgl2Hf-ppHlrf-sM5MNb"
+                                                                data-is-touch-wrapper='true'><button
+                                                                    class="VfPpkd-BIzmGd SaBhMc NNFoTc zI3eKe N7pe4e Hkd4je E9mvxc VfPpkd-BIzmGd-OWXEXe-yolsp VfPpkd-BIzmGd-OWXEXe-dgl2Hf"
+                                                                    jsname="KpyLEe" jscontroller="soHxf"
+                                                                    jsaction="click:cOuCgd(preventDefault=true); mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;"
+                                                                    data-idom-class="SaBhMc NNFoTc zI3eKe N7pe4e Hkd4je E9mvxc"
+                                                                    aria-label="Next"><span
+                                                                        class="VfPpkd-BFbNVe-bF1uUb NZp2ef"
+                                                                        aria-hidden="true"></span>
+                                                                    <div class="VfPpkd-wbSZ0b"></div>
+                                                                    <div class="VfPpkd-kLizxb-LhBDec"></div><span
+                                                                        class="VfPpkd-Q0XOV"><span class=""
+                                                                            aria-hidden="true"><svg width="24"
+                                                                                height="24" viewBox="0 0 24 24"
+                                                                                focusable="false"
+                                                                                class="maOwXd NMm5M hhikbc">
+                                                                                <path
+                                                                                    d="M7.59 18.59L9 20l8-8-8-8-1.41 1.41L14.17 12" />
+                                                                            </svg></span></span>
+                                                                    <div class="VfPpkd-D4TID"></div>
+                                                                </button></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><c-data id="i7" jsdata=" b9K6if;_;7"></c-data>
+                                    </c-wiz>
+                                </div><c-data id="i6" jsdata=" b9K6if;_;7 nhVAHb;_;12"></c-data>
+                            </c-wiz><c-wiz jsrenderer="B36gxf" data-loaded="false"
+                                data-ved="2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQ3cYIegQIAhAg" jsshadow jsdata="deferred-i8"
+                                data-p="%.@.1]" jscontroller="qqhFT" jsaction="rcuQ6b:WYd" data-node-index="6;0"
+                                autoupdate jsmodel="hc6Ubd" c-wiz>
+                               
+                            </c-wiz></div>
+                        <div class="OFJocd">
+                                <div>
+                                    
+                                </div><c-data id="i9" jsdata=" b9K6if;_;9"></c-data>
+                            </c-wiz>
+                                <section aria-labelledby="events-heading">
+                                    <div class="NstWLb">
+                                        <div role="heading" aria-level="2" class="SpX9mc" id="events-heading">Top Stocks</div>
+                                        <div role="heading" aria-level="3" class="m6ESCb">Based on Market Cap.</div>
+                                        <div class="kP2aBc">
+                                            <div class="kQQz8e">
+                                                <div class="pl5gdd">
+                                                    <div class="VS9TYb">Jul</div>
+                                                    <div class="Z1cdGd">12</div>
+                                                </div>
+                                                <div><a href="./quote/JPM:NYSE"
+                                                        jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAo;track:click"
+                                                        class="qNqwJf">JPMorgan Chase &amp; Co</a>
+                                                    <div class="fbt0Xc">Jul 12, 2024, 4:30 PM</div>
+                                                </div>
+                                                <div class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jscontroller="nKuFpb"
+                                                    jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                                    data-idom-class="yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jslog="122118;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhroHegQIAhAp;track:click">
+                                                    <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><i
+                                                        class="google-material-icons VfPpkd-kBDsod"
+                                                        aria-hidden="true">calendar_add_on</i><a
+                                                        class="WpHeLc VfPpkd-mRLv6"
+                                                        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;text=JPMorgan+Chase+%26amp;+Co+-+Q2+2024+Earnings+Release&amp;dates=20240712T110000Z/20240712T113000Z&amp;details=JPMorgan+Chase+%26amp;amp;+Co+-+Q2+2024+Earnings+Release%0AListen+at+https://www.jpmorganchase.com/ir/events%0AMore+at+www.google.com/finance/quote/JPM:NYSE%0A&amp;location=https://www.jpmorganchase.com/ir/events"
+                                                        target="_blank" aria-label="Add to calendar"
+                                                        jsname="hSRGPd"></a>
+                                                    <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div>
+                                                </div>
+                                            </div>
+                                           
+                                             
+                                             <div class="kQQz8e">
+                                                <div class="pl5gdd">
+                                                    <div class="VS9TYb">Jul</div>
+                                                    <div class="Z1cdGd">17</div>
+                                                </div>
+                                                <div><a href="./quote/PERSISTENT:NSE"
+                                                        jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAq;track:click"
+                                                        class="qNqwJf">Persistent Systems</a>
+                                                    <div class="fbt0Xc">Jul 17, 2024</div>
+                                                </div>
+                                                <div class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jscontroller="nKuFpb"
+                                                    jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                                    data-idom-class="yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jslog="122118;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhroHegQIAhAr;track:click">
+                                                    <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><i
+                                                        class="google-material-icons VfPpkd-kBDsod"
+                                                        aria-hidden="true">calendar_add_on</i><a
+                                                        class="WpHeLc VfPpkd-mRLv6"
+                                                        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;text=Persistent+Systems+-+Q1+2025+Earnings+Release&amp;dates=20240717/20240718&amp;details=Persistent+Systems+-+Q1+2025+Earnings+Release%0AMore+at+www.google.com/finance/quote/PERSISTENT:NSE%0A"
+                                                        target="_blank" aria-label="Add to calendar"
+                                                        jsname="hSRGPd"></a>
+                                                    <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div>
+                                                </div>
+                                            </div>
+                                             <div class="kQQz8e">
+                                                <div class="pl5gdd">
+                                                    <div class="VS9TYb">Jul</div>
+                                                    <div class="Z1cdGd">17</div>
+                                                </div>
+                                                <div><a href="./quote/PERSISTENT:NSE"
+                                                        jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAq;track:click"
+                                                        class="qNqwJf">Persistent Systems</a>
+                                                    <div class="fbt0Xc">Jul 17, 2024</div>
+                                                </div>
+                                                <div class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jscontroller="nKuFpb"
+                                                    jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                                    data-idom-class="yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jslog="122118;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhroHegQIAhAr;track:click">
+                                                    <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><i
+                                                        class="google-material-icons VfPpkd-kBDsod"
+                                                        aria-hidden="true">calendar_add_on</i><a
+                                                        class="WpHeLc VfPpkd-mRLv6"
+                                                        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;text=Persistent+Systems+-+Q1+2025+Earnings+Release&amp;dates=20240717/20240718&amp;details=Persistent+Systems+-+Q1+2025+Earnings+Release%0AMore+at+www.google.com/finance/quote/PERSISTENT:NSE%0A"
+                                                        target="_blank" aria-label="Add to calendar"
+                                                        jsname="hSRGPd"></a>
+                                                    <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div>
+                                                </div>
+                                            </div>
+                                             <div class="kQQz8e">
+                                                <div class="pl5gdd">
+                                                    <div class="VS9TYb">Jul</div>
+                                                    <div class="Z1cdGd">17</div>
+                                                </div>
+                                                <div><a href="./quote/PERSISTENT:NSE"
+                                                        jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAq;track:click"
+                                                        class="qNqwJf">Persistent Systems</a>
+                                                    <div class="fbt0Xc">Jul 17, 2024</div>
+                                                </div>
+                                                <div class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jscontroller="nKuFpb"
+                                                    jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                                    data-idom-class="yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jslog="122118;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhroHegQIAhAr;track:click">
+                                                    <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><i
+                                                        class="google-material-icons VfPpkd-kBDsod"
+                                                        aria-hidden="true">calendar_add_on</i><a
+                                                        class="WpHeLc VfPpkd-mRLv6"
+                                                        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;text=Persistent+Systems+-+Q1+2025+Earnings+Release&amp;dates=20240717/20240718&amp;details=Persistent+Systems+-+Q1+2025+Earnings+Release%0AMore+at+www.google.com/finance/quote/PERSISTENT:NSE%0A"
+                                                        target="_blank" aria-label="Add to calendar"
+                                                        jsname="hSRGPd"></a>
+                                                    <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div>
+                                                </div>
+                                            </div>
+                                            <div class="kQQz8e">
+                                                <div class="pl5gdd">
+                                                    <div class="VS9TYb">Jul</div>
+                                                    <div class="Z1cdGd">18</div>
+                                                </div>
+                                                <div><a href="./quote/POLYCAB:NSE"
+                                                        jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAs;track:click"
+                                                        class="qNqwJf">Polycab India</a>
+                                                    <div class="fbt0Xc">Jul 18, 2024, 12:08 PM</div>
+                                                </div>
+                                                <div class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jscontroller="nKuFpb"
+                                                    jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                                    data-idom-class="yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jslog="122118;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhroHegQIAhAt;track:click">
+                                                    <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><i
+                                                        class="google-material-icons VfPpkd-kBDsod"
+                                                        aria-hidden="true">calendar_add_on</i><a
+                                                        class="WpHeLc VfPpkd-mRLv6"
+                                                        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;text=Polycab+India+-+Q1+2025+Earnings+Release&amp;dates=20240718T063800Z/20240718T070800Z&amp;details=Polycab+India+-+Q1+2025+Earnings+Release%0AMore+at+www.google.com/finance/quote/POLYCAB:NSE%0A"
+                                                        target="_blank" aria-label="Add to calendar"
+                                                        jsname="hSRGPd"></a>
+                                                    <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div>
+                                                </div>
+                                            </div>
+                                            <div class="kQQz8e">
+                                                <div class="pl5gdd">
+                                                    <div class="VS9TYb">Jul</div>
+                                                    <div class="Z1cdGd">19</div>
+                                                </div>
+                                                <div><a href="./quote/JSWSTEEL:NSE"
+                                                        jslog="106421;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtb8GegQIAhAu;track:click"
+                                                        class="qNqwJf">JSW Steel</a>
+                                                    <div class="fbt0Xc">Jul 19, 2024</div>
+                                                </div>
+                                                <div class="VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jscontroller="nKuFpb"
+                                                    jsaction="click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc; touchcancel:JMtRjd; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;mlnRJb:fLiPzd;"
+                                                    data-idom-class="yHy1rc eT1oJ mN1ivc xeElIb"
+                                                    jslog="122118;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQhroHegQIAhAv;track:click">
+                                                    <div jsname="s3Eaab" class="VfPpkd-Bz112c-Jh9lGc"></div><i
+                                                        class="google-material-icons VfPpkd-kBDsod"
+                                                        aria-hidden="true">calendar_add_on</i><a
+                                                        class="WpHeLc VfPpkd-mRLv6"
+                                                        href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;text=JSW+Steel+-+Q1+2025+Earnings+Release&amp;dates=20240719/20240720&amp;details=JSW+Steel+-+Q1+2025+Earnings+Release%0AMore+at+www.google.com/finance/quote/JSWSTEEL:NSE%0A"
+                                                        target="_blank" aria-label="Add to calendar"
+                                                        jsname="hSRGPd"></a>
+                                                    <div class="VfPpkd-Bz112c-J1Ukfc-LhBDec"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section><c-data id="i11" jsdata=" dF4LCd;_;8 b9K6if;_;7"></c-data>
+                            <c-wiz jsrenderer="zmKyye" jsshadow jsdata="deferred-i12" data-p="%.@.]"
+                                data-node-index="5;0" jsmodel="hc6Ubd" c-wiz>
+                               
+                            </c-wiz></div>
+                    </div><c-wiz jsrenderer="IC8kyf" data-loaded="false" jsshadow jsdata="deferred-i13" data-p="%.@.]"
+                        jscontroller="D9mUM" jsaction="rcuQ6b:WYd" data-node-index="9;0" autoupdate jsmodel="hc6Ubd"
+                        c-wiz>
+                       
+                    </c-wiz>
+                </div>
+            </div>
+            <div class="TkL5bb">
+                <div class="e1AOyf"><c-wiz jsrenderer="AOdTqf" jsshadow jsdata="deferred-i14" data-p="%.@.]"
+                        data-node-index="1;0" jsmodel="hc6Ubd" c-wiz>
+                        <section role="complementary" aria-labelledby="discover-more-heading">
+                            <div class="HDXgAf">
+                               
+                                <div class="o5xQnf">
+                                    <div class="C0xD1 GxXsy" jscontroller="QOYo1b"
+                                        jsaction="rcuQ6b:hhR9je;agoMJf:m3mY0d;JIbuQc:ux1Cpc(ux1Cpc),KpyLEe(KpyLEe);"
+                                        jsshadow>
+                                        <div class="SJyhnc bVf6m">
+                                            <div class="NBZP0e xbmkib" data-snap-point="0"
+                                                data-snap-debounce-ms="250" data-snap-animation-ms="300" id="wishlist">
+                                                {% for item in wishlist %}
+                                                <div role="listitem" ssk='9:/m/046k_p' data-ticker="{{ item.ticker }}" onclick="searchTicker('{{ item.ticker }}')">
+                                                    <div class="PieIgb" jscontroller="ctuFId"
+                                                        jsaction="rcuQ6b:WYd;IBB03b:rXxpye">
+                                                        <div
+                                                            class="VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  XI95Cc">
+                                                           
+                                                                <div
+                                                                class="tOzDHb">
+                                                                <div class="RwFyvf">{{ item.ticker }}</div>
+                                                                <div class="F64egd">
+                                                                    <div class="ek9iae"><span class="JLPHhb">
+                                                                            <div jsname="ip75Cb" class="Bu4oXd">
+                                                                                <div class="YMlKec">79,996.60</div>
+                                                                            </div>
+                                                                        </span></div><span jsname="Fe7oBc"
+                                                                        class="NydbP VOXKNe"
+                                                                        jsaction="click:Xcukee(preventDefault=true)"
+                                                                        data-disable-percent-toggle="false"
+                                                                        data-multiplier-for-price-change="1"
+                                                                        aria-label="Down by 0.066%">
+                                                                        <div jsname="m6NnIb" class="zWwE1">
+                                                                            <div class="JwB6zf"
+                                                                                style="font-size: 16px;"><span
+                                                                                    class="V53LMb"
+                                                                                    aria-hidden="true"><svg width="16"
+                                                                                        height="16" viewBox="0 0 24 24"
+                                                                                        focusable="false"
+                                                                                        class=" NMm5M">
+                                                                                        <path
+                                                                                            d="M20 12l-1.41-1.41L13 16.17V4h-2v12.17l-5.58-5.59L4 12l8 8 8-8z" />
+                                                                                    </svg></span>0.066%</div>
+                                                                        </div>
+                                                                    </div></span>
+                                                                </div>
+                                                            <span class="VfPpkd-BFbNVe-bF1uUb NZp2ef"
+                                                                aria-hidden="true"></span>
+                                                        </div>
+                                                        <div class="iCC4Me">
+                                                            <div jsmodel="bPHISb" jscontroller="tvcMMb"
+                                                                jsaction="aWRkAb:T6My7c;h4C2te:j697N;jnEYec:Oay6Jf;N1QJoc:KiOShe;GvneHb:GvneHb;"
+                                                                jslog="106422;ved:2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtr8GegQIAhBA;track:click"
+                                                                jsdata="b9K6if;_;7" data-mid="/m/046k_p"
+                                                                data-ved="2ahUKEwjwgMmcvpCHAxVMxYQAHWXcBaQQtr8GegQIAhBA">
+                                                                <div role="button" class="U26fgb JRtysb WzwrXb fmErj"
+                                                                    jscontroller="iSvg6e"
+                                                                    jsaction="click:cOuCgd(preventDefault=true); mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; contextmenu:mg9Pef;touchstart:p6p2H; touchmove:FwuNnf; touchend:yfqBxc(preventDefault=true); touchcancel:JMtRjd;;keydown:I481le;"
+                                                                    jsshadow jsname="pzCKEc" aria-label="Follow"
+                                                                    aria-disabled="false" tabindex="0"
+                                                                    data-tooltip="Follow" aria-haspopup="true"
+                                                                    aria-expanded="false" data-dynamic="true"
+                                                                    data-tooltip-vertical-offset="-12"
+                                                                    data-tooltip-horizontal-offset="0"
+                                                                    data-tooltip-vertical-offset="-12"
+                                                                    data-tooltip-horizontal-offset="0">
+                                                                    <div class="NWlf3e MbhUzd" jsname="ksKsZd"></div>
+                                                                    <span jsslot class="MhXXcc oJeWuf"><span
+                                                                            class="Lw7GHd snByac"><i
+                                                                                class="google-material-icons Atywjf"
+                                                                                aria-hidden="true">add_circle_outline</i></span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-    <div id="chart"></div>
+                                                {% endfor %}
+                                                
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </section>
+                    </c-wiz>
+                    
+                </div>
+            </div>
+        </div>
+    </c-wiz>
 
-    <div>
-        <p>Open: <span id="open">{{ current_price.open }}</span></p>
-        <p>High: <span id="high">{{ current_price.high }}</span></p>
-        <p>Low: <span id="low">{{ current_price.low }}</span></p>
-        <p>Close: <span id="close">{{ current_price.close }}</span></p>
-        <p>Predicted: <span id="predicted">{{ predicted_price }}</span></p>
-    </div>
-
-    <button onclick="addToWishlist()">Add to Wishlist</button>
-
-    <h2>Wishlist</h2>
-    <ul id="wishlist">
-        {% for item in wishlist %}
-        <li data-ticker="{{ item.ticker }}" onclick="searchTicker('{{ item.ticker }}')">{{ item.ticker }}</li>
-        {% endfor %}
-    </ul>
-
-    <script>
+</div>
+<script>
         document.addEventListener('DOMContentLoaded', (event) => {
             searchTicker('{{ default_ticker }}'); // Load the default ticker data on page load
         });
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                searchTicker();
+            }
+        }
 
         function searchTicker(ticker = null) {
             if (!ticker) {
